@@ -67,6 +67,27 @@ class War {
         return attack
     }
 
+    SaxonAttack(){
+        let Sax = this.VikingArmy[Math.floor(Math.random()* this.VikingArmy.length)]
+        let Vik = this.SaxonArmy[Math.floor(Math.random()* this.SaxonArmy.length)]
+    let hit = Sax.receiveDamage(D.attack(D.damage));
+    if(Sax.health <= 0){
+        this.VikingArmy.splice(Sax,1)
+    }
+    return hit
+    }
+    showStatus(){
+        if(this.VikingArmy.length == 0){
+            return 'Saxons have fought for their lives and survive another day..'
+        }
+        else if(this.SaxonArmy == 0){
+            return 'Vikings have won the war of this day'
+        }
+        else{
+            return 'Vikings and Saxons be fighting still till this very day, cause it take to long'
+        }
+    }
+
 
 }
 
